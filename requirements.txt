@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+sqlalchemy
+cryptography
+PyJWT
+passlib[bcrypt]
+python-multipart
+requests
