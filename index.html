@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Secure File Sharing Application">
+    <title>Secure File Sharing</title>
+    <link rel="stylesheet" href="/static/style.css?v=4">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app-container">
+        <header>
+            <h1>Secure File System</h1>
+            <div id="user-info" class="hidden">
+                <span id="username-display"></span>
+                <button id="logout-btn" class="btn btn-secondary">Logout</button>
+            </div>
+        </header>
+
+        <main>
+            <!-- Auth Section -->
+            <section id="auth-section">
+                <div class="card">
+                    <h2>Login or Register</h2>
+                    <form id="auth-form">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" required>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" id="login-btn" class="btn btn-primary">Login</button>
+                            <button type="button" id="register-btn" class="btn btn-secondary">Register</button>
+                        </div>
+                        <div id="auth-error" class="error-message"></div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Dashboard Section -->
+            <section id="dashboard-section" class="hidden">
+                <div class="card">
+                    <h2>Upload File</h2>
+                    <form id="upload-form">
+                        <div class="form-group">
+                            <input type="file" id="file-input" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Secure Upload</button>
+                        <div id="upload-message"></div>
+                    </form>
+                </div>
+
+                <div class="card">
+                    <h2>Your Files</h2>
+                    <table id="files-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Filename</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="files-list">
+                            <!-- Files will be injected here -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="card">
+                    <h2>Active Share Links</h2>
+                    <div id="active-shares-list">
+                        <p style="font-size: 0.875rem; color: var(--text-muted);">No active share links.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <script src="/static/app.js?v=11"></script>
+</body>
+</html>
